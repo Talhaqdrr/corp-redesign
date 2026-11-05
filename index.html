@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>American Contractors Corp. — Simplifying Complexity</title>
+<meta name="description" content="Family-owned New England subcontractor since 1998 specializing in acoustical ceilings, acoustical wall panels, custom architectural wood and metal, Novawall and Laqfoil installation.">
+<link rel="icon" href="img/logo/image010.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0a1a33;--navy2:#10264a;--ink:#0d1626;--red:#c8102e;--red2:#e23a4f;--paper:#f6f4ef;--paper2:#ece8df;
+  --muted:#5d6676;--line:rgba(10,26,51,.12);--white:#fff;
+  --ease:cubic-bezier(.2,.7,.1,1);--r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+h1,h2,h3,h4{font-family:Archivo,sans-serif;line-height:1.05;letter-spacing:-.02em}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+.eyebrow{font:700 12px/1 Archivo,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:2px;background:currentColor}
+.h2{font-size:clamp(34px,5vw,64px);font-weight:800;margin:16px 0 18px}
+.lead{font-size:clamp(16px,1.4vw,19px);color:var(--muted);max-width:640px}
+section{position:relative}
+
+/* progress + header */
+#prog{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--red);transform-origin:0 50%;transform:scaleX(0);z-index:100}
+header{position:fixed;inset:0 0 auto;z-index:50;transition:background .4s,box-shadow .4s,padding .4s;padding:18px 0}
+header.solid{background:rgba(246,244,239,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line);padding:10px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;padding:8px 14px}
+.logo img{height:34px;width:auto}
+.menu{display:flex;gap:4px;align-items:center}
+.menu a{font:600 14px Archivo,sans-serif;padding:9px 13px;border-radius:99px;color:#fff;transition:background .25s,color .25s}
+header.solid .menu a{color:var(--ink)}
+.menu a:hover{background:rgba(255,255,255,.14)}
+header.solid .menu a:hover{background:var(--paper2)}
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 15px Archivo,sans-serif;padding:15px 24px;border-radius:99px;background:var(--red);color:#fff;transition:background .25s,transform .25s var(--ease);will-change:transform;position:relative;overflow:hidden}
+.btn:hover{background:var(--red2)}
+.btn.ghost{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(6px)}
+.btn.dark{background:var(--navy)}
+.btn svg{width:18px;height:18px;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.menu .btn{padding:11px 18px;font-size:14px;color:#fff!important;margin-left:8px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;background:#fff;align-items:center;justify-content:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:var(--navy);position:relative;transition:.3s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+body.open .burger span{background:transparent}
+body.open .burger span::before{top:0;transform:rotate(45deg)}
+body.open .burger span::after{top:0;transform:rotate(-45deg)}
+
+/* hero */
+.hero{min-height:100svh;color:#fff;display:flex;align-items:flex-end;overflow:hidden;background:var(--navy)}
+.slides{position:absolute;inset:0}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.12);transition:opacity 1.6s ease,transform 9s linear}
+.slides img.on{opacity:1;transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,26,51,.55) 0%,rgba(10,26,51,.25) 35%,rgba(10,26,51,.92) 100%),linear-gradient(90deg,rgba(10,26,51,.75),transparent 70%)}
+#waves{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;mix-blend-mode:screen}
+.hero .wrap{position:relative;z-index:2;padding:140px 0 48px}
+.hero h1{font-size:clamp(44px,7.4vw,112px);font-weight:900;letter-spacing:-.045em;line-height:.92;max-width:1000px}
+.hero h1 em{font-style:normal;color:transparent;-webkit-text-stroke:2px #fff}
+.wd{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.06em}
+.wd>span{display:inline-block;transform:translateY(105%);transition:transform 1s var(--ease)}
+.in .wd>span{transform:none}
+.hero p{font-size:clamp(16px,1.5vw,20px);max-width:600px;color:rgba(255,255,255,.85);margin:26px 0 34px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.since{display:inline-flex;gap:10px;align-items:center;font:600 13px Archivo,sans-serif;letter-spacing:.18em;text-transform:uppercase;margin-bottom:22px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);padding:8px 14px;border-radius:99px;backdrop-filter:blur(6px)}
+.since i{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(200,16,46,.7);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 12px rgba(200,16,46,0)}100%{box-shadow:0 0 0 0 rgba(200,16,46,0)}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;border-top:1px solid rgba(255,255,255,.2)}
+.stat{padding:22px 20px 0 0}
+.stat b{display:block;font:800 clamp(30px,3.6vw,48px)/1 Archivo,sans-serif;letter-spacing:-.03em}
+.stat b sup{font-size:.5em;color:var(--red2);vertical-align:top;margin-left:2px}
+.stat small{color:rgba(255,255,255,.7);font-size:13px}
+.dots{position:absolute;right:20px;bottom:50%;z-index:3;display:flex;flex-direction:column;gap:10px}
+.dots button{width:4px;height:26px;border-radius:4px;background:rgba(255,255,255,.3);transition:.4s}
+.dots button.on{background:#fff;height:44px}
+.scrollcue{position:absolute;left:50%;bottom:18px;z-index:3;width:24px;height:38px;border:2px solid rgba(255,255,255,.5);border-radius:14px;transform:translateX(-50%)}
+.scrollcue::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:8px;border-radius:2px;background:#fff;transform:translateX(-50%);animation:cue 1.8s infinite}
+@keyframes cue{60%{transform:translate(-50%,10px);opacity:0}100%{opacity:0}}
+
+/* marquee */
+.marquee{background:#fff;border-block:1px solid var(--line);overflow:hidden;padding:26px 0}
+.marquee .lbl{text-align:center;font:600 12px Archivo,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.track{display:flex;gap:70px;width:max-content;animation:mq 38s linear infinite;align-items:center}
+.marquee:hover .track{animation-play-state:paused}
+.track img{height:44px;width:auto;max-width:170px;object-fit:contain;filter:grayscale(1) contrast(1.1);opacity:.65;transition:.3s}
+.track img:hover{filter:none;opacity:1}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* reveal */
+[data-r]{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+[data-r].in{opacity:1;transform:none}
+[data-r="l"]{transform:translateX(-50px)}[data-r="rt"]{transform:translateX(50px)}
+[data-r="z"]{transform:scale(.92)}
+.clip>img{clip-path:inset(0 0 100% 0);transition:clip-path 1.4s var(--ease)}
+.clip.in>img{clip-path:inset(0 0 0 0)}
+
+/* about */
+.about{padding:140px 0 120px}
+.about .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:center}
+.about .pic{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
+.about .pic img{width:100%;height:118%;object-fit:cover;will-change:transform}
+.badge{position:absolute;left:-1px;bottom:-1px;background:var(--red);color:#fff;padding:26px 30px;border-top-right-radius:var(--r)}
+.badge b{font:900 64px/1 Archivo,sans-serif;letter-spacing:-.04em;display:block}
+.badge small{font:600 13px Archivo;letter-spacing:.12em;text-transform:uppercase}
+.about p+p{margin-top:16px}
+.about .txt p{color:var(--muted);font-size:17px}
+.sectors{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 34px}
+.sectors span{font:600 13px Archivo;padding:8px 14px;border:1px solid var(--line);border-radius:99px;background:#fff;transition:.3s}
+.sectors span:hover{background:var(--navy);color:#fff;transform:translateY(-2px)}
+.quote{font:700 clamp(22px,2.2vw,28px)/1.25 Archivo,sans-serif;border-left:3px solid var(--red);padding-left:20px;margin-top:26px;color:var(--navy)}
+
+/* services */
+.services{background:var(--navy);color:#fff;padding:130px 0;overflow:hidden}
+.services .lead{color:rgba(255,255,255,.7)}
+.gridsvg{position:absolute;right:-80px;top:40px;width:560px;opacity:.18;pointer-events:none}
+.gridsvg path{fill:none;stroke:#fff;stroke-width:1.2;stroke-dasharray:1400;stroke-dashoffset:1400;transition:stroke-dashoffset 3.5s var(--ease)}
+.in .gridsvg path,.gridsvg.in path{stroke-dashoffset:0}
+.svc-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:54px 0 30px}
+.svc-tabs button{text-align:left;padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);transition:.35s var(--ease);position:relative;overflow:hidden}
+.svc-tabs button small{display:block;font:700 12px Archivo;color:var(--red2);letter-spacing:.15em;margin-bottom:10px}
+.svc-tabs button b{font:700 18px/1.2 Archivo}
+.svc-tabs button::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:0;transition:transform .5s var(--ease)}
+.svc-tabs button.on{background:#fff;color:var(--navy);border-color:#fff}
+.svc-tabs button.on::after{transform:scaleX(1)}
+.svc-tabs button:not(.on):hover{background:rgba(255,255,255,.08)}
+.svc{display:none;grid-template-columns:1.1fr 1fr;gap:50px;align-items:start}
+.svc.on{display:grid;animation:svcin .8s var(--ease)}
+@keyframes svcin{from{opacity:0;transform:translateY(24px)}}
+.svc h3{font-size:clamp(28px,3vw,40px);font-weight:800;margin-bottom:18px}
+.svc p{color:rgba(255,255,255,.78);margin-bottom:14px}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:12px;aspect-ratio:4/3;transition:transform .7s var(--ease)}
+.mosaic img:first-child{grid-column:span 2;aspect-ratio:16/9}
+.mosaic div{overflow:hidden;border-radius:12px}
+.mosaic div:first-child{grid-column:span 2}
+.mosaic div:hover img{transform:scale(1.06)}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0 22px}
+.chips span{font-size:13px;padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);opacity:0;transform:translateY(10px);transition:.5s var(--ease)}
+.svc.on .chips span{opacity:1;transform:none}
+.chips span.red{background:var(--red);border-color:var(--red)}
+.svc h4{font:700 13px Archivo;letter-spacing:.18em;text-transform:uppercase;color:var(--red2);margin-top:22px}
+.svc .btn{margin-top:14px}
+.mfg a{text-decoration:underline;text-decoration-color:rgba(255,255,255,.3);text-underline-offset:3px}
+
+/* timeline */
+.history{padding:130px 0;background:var(--paper)}
+.tl{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:70px}
+.tl::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
+.tl .bar{position:absolute;left:0;top:9px;height:2px;width:100%;background:var(--red);transform-origin:0;transform:scaleX(0);transition:transform 2.4s var(--ease)}
+.tl.in .bar{transform:scaleX(1)}
+.ev{position:relative;padding-top:42px}
+.ev::before{content:"";position:absolute;top:0;left:0;width:20px;height:20px;border-radius:50%;background:var(--paper);border:3px solid var(--red);transform:scale(0);transition:transform .6s var(--ease)}
+.tl.in .ev::before{transform:scale(1)}
+.ev b{font:900 44px/1 Archivo;letter-spacing:-.03em;color:var(--navy);display:block;margin-bottom:12px}
+.ev p{color:var(--muted);font-size:15px}
+.ev{opacity:0;transform:translateY(20px);transition:.8s var(--ease)}
+.tl.in .ev{opacity:1;transform:none}
+
+/* work */
+.work{padding:130px 0;background:#fff}
+.work-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{font:600 14px Archivo;padding:10px 18px;border-radius:99px;border:1px solid var(--line);transition:.3s}
+.filters button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.pgrid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:50px}
+.card{grid-column:span 4;position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:var(--navy);cursor:pointer;transform-style:preserve-3d;transition:transform .5s var(--ease),opacity .5s,box-shadow .5s;color:#fff}
+.card.wide{grid-column:span 8;aspect-ratio:auto}
+.card.full{grid-column:span 12;aspect-ratio:21/8}
+.pgrid.filtered .card{grid-column:span 4;aspect-ratio:4/5}
+.card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.card:hover img{transform:scale(1.07)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,26,51,.92))}
+.card .meta{position:absolute;left:22px;right:22px;bottom:20px;z-index:2;transform:translateZ(40px)}
+.card .meta small{font:700 11px Archivo;letter-spacing:.18em;text-transform:uppercase;color:#ffb3bd}
+.card .meta h3{font-size:clamp(20px,1.9vw,26px);font-weight:800;margin:6px 0 4px}
+.card .meta span{font-size:13px;opacity:.75}
+.card .count{position:absolute;top:18px;right:18px;z-index:2;font:700 12px Archivo;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);padding:7px 12px;border-radius:99px;display:flex;gap:6px;align-items:center}
+.card .plus{position:absolute;top:18px;left:18px;z-index:2;width:44px;height:44px;border-radius:50%;background:var(--red);display:grid;place-items:center;transform:scale(0) rotate(-90deg);transition:.5s var(--ease)}
+.card:hover .plus{transform:none}
+.card.hide{display:none}
+.card:hover{box-shadow:0 30px 60px -20px rgba(10,26,51,.45)}
+.archive{margin-top:90px}
+.archive h3{font-size:26px;font-weight:800;margin-bottom:6px}
+.archive p{color:var(--muted)}
+.strip{overflow:hidden;margin-top:26px;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.strip .row{display:flex;gap:14px;width:max-content;animation:mq 90s linear infinite}
+.strip .row.rev{animation-direction:reverse;margin-top:14px;animation-duration:110s}
+.strip:hover .row{animation-play-state:paused}
+.strip figure{position:relative;width:300px;height:210px;border-radius:14px;overflow:hidden;flex:none;cursor:zoom-in}
+.strip figure img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.strip figure:hover img{transform:scale(1.08)}
+.strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 14px 12px;font:600 13px Archivo;color:#fff;background:linear-gradient(transparent,rgba(10,26,51,.85))}
+
+/* why */
+.why{padding:130px 0;background:var(--paper2);overflow:hidden}
+.why .grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.feat{display:grid;gap:14px;margin-top:30px}
+.feat div{display:flex;gap:18px;padding:22px;border-radius:16px;background:#fff;border:1px solid var(--line);transition:.4s var(--ease)}
+.feat div:hover{transform:translateX(8px);box-shadow:0 18px 40px -20px rgba(10,26,51,.3)}
+.feat i{flex:none;width:50px;height:50px;border-radius:14px;background:var(--navy);display:grid;place-items:center}
+.feat i svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.8}
+.feat h4{font-size:18px;margin-bottom:4px}
+.feat p{color:var(--muted);font-size:15px}
+.stack{position:relative;height:620px}
+.stack img{position:absolute;border-radius:var(--r);object-fit:cover;box-shadow:0 40px 80px -30px rgba(10,26,51,.5)}
+.stack img:nth-child(1){left:0;top:0;width:68%;height:70%}
+.stack img:nth-child(2){right:0;top:22%;width:52%;height:46%}
+.stack img:nth-child(3){left:14%;bottom:0;width:56%;height:38%;border:8px solid var(--paper2)}
+
+/* leadership */
+.team{padding:130px 0;background:#fff}
+.tgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:54px}
+.person{border-radius:var(--r);padding:26px 22px;background:var(--paper);border:1px solid var(--line);text-align:left;transition:.45s var(--ease);position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:300px}
+.person::before{content:"";position:absolute;inset:auto -40% -60% auto;width:200px;height:200px;border-radius:50%;background:var(--red);opacity:0;transition:.6s var(--ease)}
+.person:hover{background:var(--navy);color:#fff;transform:translateY(-6px)}
+.person:hover::before{opacity:.25;inset:auto -20% -30% auto}
+.mono{width:70px;height:70px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:800 22px Archivo;margin-bottom:auto;position:relative;transition:.45s}
+.person:hover .mono{background:var(--red)}
+.mono::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px dashed currentColor;opacity:.35;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.person h4{font-size:20px;margin:30px 0 6px;position:relative}
+.person small{color:var(--muted);font-size:13px;position:relative;line-height:1.4;display:block}
+.person:hover small{color:rgba(255,255,255,.7)}
+.person .more{margin-top:18px;font:700 13px Archivo;color:var(--red);display:flex;gap:6px;align-items:center;position:relative}
+.person:hover .more{color:#fff}
+
+/* associations */
+.assoc{padding:130px 0;background:var(--paper)}
+.agrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin-top:54px}
+.acard{background:#fff;border-radius:var(--r);padding:26px;border:1px solid var(--line);transition:.45s var(--ease)}
+.acard:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(10,26,51,.4)}
+.acard .lg{height:80px;display:flex;align-items:center;margin-bottom:18px}
+.acard .lg img{max-height:74px;max-width:170px;object-fit:contain}
+.acard h4{font-size:18px;margin-bottom:8px}
+.acard p{color:var(--muted);font-size:14.5px}
+
+/* community */
+.community{padding:130px 0;background:var(--navy);color:#fff;overflow:hidden}
+.community .grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.community .lead{color:rgba(255,255,255,.72)}
+.lists{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:34px}
+.lists h4{font:700 13px Archivo;letter-spacing:.15em;text-transform:uppercase;color:var(--red2);margin-bottom:12px;line-height:1.5}
+.lists li{list-style:none;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:15px;display:flex;gap:10px}
+.lists li::before{content:"";flex:none;width:6px;height:6px;margin-top:9px;border-radius:50%;background:var(--red)}
+.cpics{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cpics img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r)}
+.cpics img:last-child{margin-top:60px}
+
+/* careers */
+.careers{padding:130px 0;background:#fff}
+.jobs{display:grid;gap:14px;margin-top:44px}
+.job{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:30px;border-radius:var(--r);border:1px solid var(--line);background:var(--paper);transition:.4s var(--ease)}
+.job:hover{border-color:var(--navy);transform:translateX(6px)}
+.job h3{font-size:clamp(19px,1.8vw,24px);font-weight:800;margin-bottom:6px}
+.job p{color:var(--muted)}
+.job .tag{font:700 11px Archivo;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:8px;display:block}
+
+/* contact */
+.contact{padding:130px 0;background:var(--paper2)}
+.contact .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px}
+.info{display:grid;gap:14px;margin-top:30px}
+.info a,.info div{display:flex;gap:16px;align-items:center;padding:18px 20px;background:#fff;border-radius:14px;border:1px solid var(--line);transition:.3s}
+.info a:hover{border-color:var(--red)}
+.info i{flex:none;width:44px;height:44px;border-radius:12px;background:var(--navy);display:grid;place-items:center}
+.info i svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.8}
+.info small{display:block;font:700 11px Archivo;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.info b{font-weight:600}
+.map{margin-top:14px;border-radius:14px;overflow:hidden;height:230px;border:1px solid var(--line);filter:grayscale(.4)}
+.map iframe{width:100%;height:100%;border:0}
+form{background:#fff;border-radius:22px;padding:36px;border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form h3{grid-column:1/-1;font-size:28px;font-weight:800;margin-bottom:6px}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.full{grid-column:1/-1}
+.f label{font:600 13px Archivo}
+.f label em{color:var(--red);font-style:normal}
+.f input,.f select,.f textarea{font:inherit;font-size:15px;padding:13px 14px;border-radius:10px;border:1px solid var(--line);background:var(--paper);transition:.25s;width:100%}
+.f input:focus,.f select:focus,.f textarea:focus{outline:0;border-color:var(--navy);background:#fff;box-shadow:0 0 0 4px rgba(10,26,51,.08)}
+.radios{display:flex;gap:8px;flex-wrap:wrap}
+.radios label{display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--paper);font-weight:500;cursor:pointer}
+.radios input{width:auto;accent-color:var(--red)}
+form .btn{justify-self:start;grid-column:1/-1}
+.fnote{grid-column:1/-1;font-size:13px;color:var(--muted)}
+.ok{grid-column:1/-1;padding:14px;border-radius:10px;background:#e8f5ec;color:#185c31;display:none}
+
+/* cta band */
+.band{position:relative;overflow:hidden;color:#fff;padding:120px 0;text-align:center;background:var(--navy)}
+.band img{position:absolute;inset:-10% 0;width:100%;height:120%;object-fit:cover;opacity:.35;will-change:transform}
+.band .wrap{position:relative}
+.band h2{font-size:clamp(36px,6vw,84px);font-weight:900;letter-spacing:-.04em;max-width:960px;margin:14px auto 30px}
+
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:80px 0 30px;font-size:15px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+footer h5{font:700 13px Archivo;letter-spacing:.15em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+footer li{list-style:none;margin-bottom:9px}
+footer a:hover{color:#fff}
+.flogo{background:#fff;display:inline-block;padding:10px;border-radius:12px;margin-bottom:18px}
+.flogo img{height:70px}
+.copy{border-top:1px solid rgba(255,255,255,.1);margin-top:60px;padding-top:24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px}
+
+/* dialogs */
+dialog{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;color:inherit}
+dialog::backdrop{background:rgba(6,14,28,.88);backdrop-filter:blur(6px)}
+#lb{width:100vw;height:100vh}
+#lb[open]{display:flex;flex-direction:column}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;color:#fff;gap:20px}
+.lb-top h3{font-size:clamp(18px,2vw,24px);font-weight:800}
+.lb-top small{opacity:.65;font-size:13px}
+.lb-stage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;min-height:0;padding:0 70px}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;animation:lbin .5s var(--ease)}
+@keyframes lbin{from{opacity:0;transform:scale(.97)}}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;display:grid;place-items:center;transition:.25s}
+.lb-nav:hover{background:var(--red)}
+.lb-nav.p{left:12px}.lb-nav.n{right:12px}
+.lb-thumbs{display:flex;gap:8px;overflow-x:auto;padding:16px 24px 22px;justify-content:safe center}
+.lb-thumbs img{width:76px;height:54px;object-fit:cover;border-radius:6px;opacity:.45;cursor:pointer;flex:none;transition:.25s;border:2px solid transparent}
+.lb-thumbs img.on{opacity:1;border-color:var(--red)}
+.x{width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:22px;flex:none}
+.x:hover{background:var(--red)}
+#bio{width:min(640px,100% - 32px);margin:auto}
+#bio .in{background:#fff;border-radius:22px;padding:38px;position:relative;animation:lbin .45s var(--ease)}
+#bio .x{position:absolute;right:16px;top:16px;background:var(--paper2);color:var(--ink)}
+#bio .mono{margin-bottom:20px}
+#bio h3{font-size:30px;font-weight:800}
+#bio h6{font:600 14px Inter;color:var(--red);margin:6px 0 18px}
+#bio p{color:var(--muted)}
+
+/* magnetic / tilt base */
+.mag{transition:transform .35s var(--ease)}
+
+/* responsive */
+@media (max-width:1080px){
+  .menu a:not(.btn){display:none}
+  .tgrid{grid-template-columns:repeat(3,1fr)}
+  .svc-tabs{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .burger{display:flex}
+  header.solid{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--paper)}
+  .menu{position:fixed;inset:0;height:100vh;background:var(--navy);flex-direction:column;justify-content:center;gap:6px;transform:translateY(-100%);visibility:hidden;transition:transform .6s var(--ease),visibility 0s .6s;z-index:-1}
+  body.open .menu{transform:none;visibility:visible;transition:transform .6s var(--ease)}
+  body.open{overflow:hidden}
+  .menu a:not(.btn){display:block;color:#fff!important;font-size:26px}
+  .about .grid,.why .grid,.community .grid,.contact .grid,.svc.on{grid-template-columns:1fr;gap:40px}
+  .stats{grid-template-columns:1fr 1fr}
+  .tl{grid-template-columns:1fr;gap:0}
+  .tl::before,.tl .bar{left:9px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .tl .bar{transform-origin:50% 0;transform:scaleY(0)}
+  .tl.in .bar{transform:scaleY(1)}
+  .ev{padding:0 0 34px 46px}
+  .card,.card.wide,.card.full,.pgrid.filtered .card{grid-column:span 12;aspect-ratio:4/3}
+  .stack{height:420px}
+  .tgrid{grid-template-columns:1fr 1fr}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .dots{display:none}
+  .gridsvg{width:340px;right:-120px}
+}
+@media (max-width:560px){
+  .wrap{width:calc(100% - 32px)}
+  .about,.services,.history,.work,.why,.team,.assoc,.community,.careers,.contact{padding:90px 0}
+  form{grid-template-columns:1fr;padding:24px}
+  .tgrid,.lists,.fgrid{grid-template-columns:1fr}
+  .person{min-height:0}
+  .job{grid-template-columns:1fr}
+  .svc-tabs button{padding:16px}
+  .svc-tabs button b{font-size:15px}
+  .lb-stage{padding:0 10px}
+  .lb-nav{top:auto;bottom:-6px;transform:none}
+  .strip figure{width:230px;height:170px}
+  .hero .wrap{padding-bottom:70px}
+  .stat{padding-right:10px}
+  .logo img{height:28px}
+  .badge{padding:18px 22px}.badge b{font-size:46px}
+  .cpics img:last-child{margin-top:30px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  [data-r],.wd>span,.ev{opacity:1!important;transform:none!important}
+  .clip>img{clip-path:none!important}
+  .slides img{transform:none!important}
+  .gridsvg path{stroke-dashoffset:0!important}
+  .tl .bar{transform:none!important}
+}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="American Contractors Corp. home"><img src="img/logo/AmericanContractors-LogoWebsite.png" alt="American Contractors Corp. — Simplifying Complexity"></a>
+    <nav class="menu" id="menu">
+      <a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#leadership">Leadership</a><a href="#partners">Partners</a><a href="#careers">Careers</a>
+      <a href="#contact" class="btn mag">Request an Estimate</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" id="hero">
+  <div class="slides" id="slides"></div>
+  <canvas id="waves" aria-hidden="true"></canvas>
+  <div class="dots" id="dots"></div>
+  <div class="wrap">
+    <div class="since" data-r><i></i>Family-owned · New England · Since 1998</div>
+    <h1 class="split" id="h1">Simplifying <em>complexity</em> for our clients.</h1>
+    <p data-r>A leading New England subcontractor specializing in acoustical ceilings, acoustical walls, and custom architectural wood- and metalwork — one contractor for your most difficult finishes, on time and on budget.</p>
+    <div class="ctas" data-r>
+      <a href="#work" class="btn mag">View Our Work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="#contact" class="btn ghost mag">Contact Us</a>
+    </div>
+    <div class="stats" data-r>
+      <div class="stat"><b><span data-count="1998" data-plain>1998</span></b><small>Founded by Tony Giordano</small></div>
+      <div class="stat"><b><span data-count="28">28</span><sup>+</sup></b><small>Years of experience</small></div>
+      <div class="stat"><b><span data-count="4">4</span></b><small>Specialty trades, one team</small></div>
+      <div class="stat"><b>Gold</b><small>CISCA award · Logan Terminal C</small></div>
+    </div>
+  </div>
+  <div class="scrollcue" aria-hidden="true"></div>
+</section>
+
+<div class="marquee" aria-label="Clients we work with">
+  <div class="lbl">Trusted by New England’s leading builders</div>
+  <div class="track" id="track"></div>
+</div>
+
+<section class="about" id="about">
+  <div class="wrap grid">
+    <div class="pic clip" data-r="z"><img data-speed=".12" id="aboutImg" alt="Logan Airport Terminal E interior by American Contractors Corp."><div class="badge"><b data-count="28">28</b><small>Years of excellence</small></div></div>
+    <div class="txt">
+      <span class="eyebrow" data-r>About us</span>
+      <h2 class="h2 split">Building a legacy of excellence.</h2>
+      <p data-r>Founded in 1998, American Contractors Corp. is a family-owned New England subcontractor specializing in acoustical ceilings and wall panel systems, as well as custom architectural metal design and finishes.</p>
+      <p data-r>Whether your project requires a standard manufactured product or a complex design-assisted, custom-fabricated solution, we have the resources to support your requirements. We use fully integrated product planning technology so general contractors and architects can clearly view and assess every component of an estimated project upfront.</p>
+      <div class="sectors" data-r><span>Education</span><span>Healthcare</span><span>Financial</span><span>Retail</span><span>Transportation</span><span>Airports</span><span>Entertainment</span><span>Commercial Residential</span></div>
+      <div class="quote" data-r>“We don’t build buildings, we build relationships.”<br><small style="font:500 14px Inter;color:var(--muted)">— Tony Giordano, Founder & CEO</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <svg class="gridsvg" viewBox="0 0 560 560" data-r aria-hidden="true"><path d="M0 80H560M0 200H560M0 320H560M0 440H560M80 0V560M200 0V560M320 0V560M440 0V560"/><path d="M20 520Q280 300 540 520M20 470Q280 250 540 470M20 420Q280 200 540 420"/></svg>
+  <div class="wrap">
+    <span class="eyebrow" data-r>Our services</span>
+    <h2 class="h2 split">Creating solutions tailored to your needs.</h2>
+    <p class="lead" data-r>American Contractors started as an acoustical ceiling company and has since expanded to acoustical wall panels and custom architectural wood- and metalwork. Clients can package difficult trades with one contractor — finishes are handled by one of our project teams from start to finish.</p>
+    <div class="svc-tabs" data-r role="tablist">
+      <button class="on" data-t="0"><small>01</small><b>Acoustical Ceilings & Wall Panels</b></button>
+      <button data-t="1"><small>02</small><b>Custom Architectural Wood & Metal</b></button>
+      <button data-t="2"><small>03</small><b>Novawall Installation</b></button>
+      <button data-t="3"><small>04</small><b>Laqfoil Installation</b></button>
+    </div>
+
+    <div class="svc on" data-p="0">
+      <div>
+        <h3>Acoustical Ceiling & Wall Panels</h3>
+        <p>Enhance your space with premium acoustical ceilings and wall panels, combining aesthetics and superior sound control for optimal comfort.</p>
+        <p>Since 1998, American Contractors has been installing acoustical ceiling systems in the New England area. Our experience, workforce and quality workmanship mean we can handle any project with efficiency and excellence.</p>
+        <p>We are experienced with every technical and aesthetic ceiling possibility — whether clients are looking for absorption, fire protection, clean-ability, or more. Our team is trained to help clients arrive at the right choice for their needs and priorities.</p>
+        <h4>Manufacturers we install</h4>
+        <div class="chips mfg" id="mfg"></div>
+      </div>
+      <div class="mosaic"><div><img data-k="crosby" alt="28 Crosby Drive acoustical ceilings"></div><div><img data-k="vv" alt="Acoustical ceiling installation"></div><div><img data-k="hero2" alt="Acoustical wall panels"></div></div>
+    </div>
+
+    <div class="svc" data-p="1">
+      <div>
+        <h3>Custom Architectural Metal Fabrication</h3>
+        <p>Transform your space with bespoke architectural wood and metal creations, meticulously crafted to elevate aesthetics and functionality.</p>
+        <p>Many architects and general contractors turn to American Contractors for our design-assist and fabrication expertise. Whether your project requires a purchased manufactured product or a custom metal fabrication, our team is ready to help you determine the right material and finishes.</p>
+        <p>Utilizing all of our resources, we strive to offer the fastest available lead times and the absolute best quality to make your project a success.</p>
+        <div class="chips"><span class="red">Design assist</span><span>Custom fabrication</span><span>Architectural metals</span><span>Custom woodwork</span><span>Stainless steel</span><span>Spaceframes</span><span>Feature ceilings</span></div>
+        <a href="#work" class="btn mag">See metal projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="mosaic"><div><img data-k="metalart" alt="Custom metal ceiling art"></div><div><img data-k="fab" alt="Custom metal ceiling feature"></div><div><img data-k="hero1" alt="Logan Airport metalwork"></div></div>
+    </div>
+
+    <div class="svc" data-p="2">
+      <div>
+        <h3>Novawall Installation</h3>
+        <p><strong style="color:#fff">American Contractors Corp. is proud to be the exclusive partner of Novawall products for the New England region.</strong></p>
+        <p>Novawall is the time-tested standard for exquisite fabric wall and ceiling applications in almost any environment. The patented site-fabricated system molds and adapts to your ideas, ensuring a meticulous finish — backed by the longest warranty in the industry, trained and certified installers, and an international network of distributors.</p>
+        <p>An industry leader in accurate fire testing and an early supporter of green building, Novawall can help you accurately calculate LEED credits. Bring life to uninspired walls with a broad palette of track styles and virtually infinite combinations of fabrics, colors, patterns, textures, custom graphics, acoustic and tackable cores.</p>
+        <h4>Attributes</h4>
+        <div class="chips" id="novaA"></div>
+        <h4>Applications</h4>
+        <div class="chips" id="novaB"></div>
+        <a href="https://www.novawall.com/" target="_blank" rel="noopener" class="btn mag">Novawall website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      </div>
+      <div class="mosaic"><div><img data-k="rice" alt="Rice University Opera Hall fabric walls"></div><div><img data-k="hh" alt="Auditorium fabric wall panels"></div><div><img data-k="jbh" alt="Fabric wall installation"></div><div><img data-k="aq2" alt="Novawall office application"></div><div><img data-k="aq6" alt="Novawall lounge application"></div><div><img data-k="reyn" alt="Reynoldsburg First Presbyterian"></div></div>
+    </div>
+
+    <div class="svc" data-p="3">
+      <div>
+        <h3>LAQFOIL Installation</h3>
+        <p>LAQFOIL Stretch Ceiling is an innovative ceiling and wall surface that gives you massive freedom in design with minimal installation and upkeep hassle. The system is a PVC or Descor (canvas-like) membrane that stretches and clips to an aluminum perimeter track — so it can be installed without removing existing furniture, and used to hide existing popcorn ceilings and wires.</p>
+        <p>The PVC membrane is about as thin and lightweight as a building material can be — 0.12–0.14 mm thick — available in translucent and perforated acoustic versions, and in over 280 colors.</p>
+        <p>LAQFOIL designs accommodate existing light fixtures, ideal for low or uneven ceilings. Choose matte, satin, metallic, or gloss — the latter heightens and brightens the space considerably.</p>
+        <h4>Attributes & applications</h4>
+        <div class="chips"><span class="red">Commercial</span><span class="red">Retail</span><span class="red">Residential</span><span>Toxin-free</span><span>Resistant to humidity</span><span>Class 1 fire rating</span><span>Stable and durable</span><span>100% antimicrobial, anti-germ & self-deodorizing</span><span>280+ colors</span></div>
+      </div>
+      <div class="mosaic"><div><img data-k="aq18" alt="Laqfoil stretch ceiling living space"></div><div><img data-k="aq3" alt="Laqfoil stretch ceiling office"></div><div><img data-k="hero3" alt="Ceiling installation"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="history" id="history">
+  <div class="wrap">
+    <span class="eyebrow" data-r>Our history</span>
+    <h2 class="h2 split">Nearly three decades of simplifying complexity.</h2>
+    <div class="tl" id="tl">
+      <div class="bar"></div>
+      <div class="ev" style="transition-delay:.1s"><b>1998</b><p>Founded as “American Acoustical Contractors Corp.” by Tony Giordano, a union carpenter of more than 30 years.</p></div>
+      <div class="ev" style="transition-delay:.4s"><b>2010</b><p>Renamed “American Contractors Corp.” to better reflect the breadth of our capabilities.</p></div>
+      <div class="ev" style="transition-delay:.7s"><b>2012</b><p>Our update of Logan Airport Terminal C won <strong>Gold</strong> for interior finishes and <strong>Silver</strong> for renovations from CISCA.</p></div>
+      <div class="ev" style="transition-delay:1s"><b>2018</b><p>Moved from our Randolph office to our new facility at 35 North Street, Canton, MA.</p></div>
+      <div class="ev" style="transition-delay:1.3s"><b>Today</b><p>Exclusive New England partner for Novawall, delivering complex interiors across the region.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="work-head">
+      <div><span class="eyebrow" data-r>Our work</span><h2 class="h2 split">Projects across New England.</h2><p class="lead" data-r>Educational institutions, financial services, entertainment, healthcare and airports. Tap any project to open its gallery.</p></div>
+      <div class="filters" id="filters" data-r><button class="on" data-f="all">All</button><button data-f="Ceilings">Ceilings</button><button data-f="Metal">Metal</button><button data-f="Walls">Walls</button></div>
+    </div>
+    <div class="pgrid" id="pgrid"></div>
+    <div class="archive">
+      <h3 data-r>From the archive</h3>
+      <p data-r>More finishes from Logan Airport, TD Garden, the Museum of Science, Newport Marriott and others.</p>
+    </div>
+  </div>
+  <div class="strip" id="strip"><div class="row"></div><div class="row rev"></div></div>
+</section>
+
+<section class="why" id="why">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow" data-r>Why American Contractors Corp.?</span>
+      <h2 class="h2 split">Building dreams, exceeding expectations.</h2>
+      <p class="lead" data-r>We combine decades of industry knowledge, a dedicated team of professionals, and a track record of successful projects. From meticulous planning to flawless execution, we deliver exceptional results.</p>
+      <div class="feat">
+        <div data-r><i><svg viewBox="0 0 24 24"><path d="M4 12h4l3-8 4 16 3-8h2"/></svg></i><span><h4>Efficient processes</h4><p>We streamline projects with precision, effectiveness, and optimal resource utilization.</p></span></div>
+        <div data-r><i><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg></i><span><h4>Focus on quality</h4><p>Top-notch craftsmanship, attention to detail, and exceptional project outcomes.</p></span></div>
+        <div data-r><i><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></i><span><h4>One contractor, many trades</h4><p>Package difficult finishes with one team — on time and on budget.</p></span></div>
+      </div>
+    </div>
+    <div class="stack" data-r="z"><img data-k="hero4" data-speed=".06" alt=""><img data-k="cta" data-speed="-.05" alt=""><img data-k="hero5" data-speed=".1" alt=""></div>
+  </div>
+</section>
+
+<section class="team" id="leadership">
+  <div class="wrap">
+    <span class="eyebrow" data-r>Leadership team</span>
+    <h2 class="h2 split">Industry veterans and visionaries.</h2>
+    <p class="lead" data-r>Our leadership drives the company’s success through strategic guidance and an unwavering commitment to excellence.</p>
+    <div class="tgrid" id="tgrid"></div>
+  </div>
+</section>
+
+<section class="assoc" id="partners">
+  <div class="wrap">
+    <span class="eyebrow" data-r>Partners & associations</span>
+    <h2 class="h2 split">Expanding our knowledge, raising the standard.</h2>
+    <p class="lead" data-r>Our affiliation with the industry’s leading trade associations gives us greater expertise and the ability to provide our clients a uniform standard of performance and quality.</p>
+    <div class="agrid" id="agrid"></div>
+  </div>
+</section>
+
+<section class="community" id="community">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow" data-r>Community involvement</span>
+      <h2 class="h2 split">Giving back to the place we build.</h2>
+      <p class="lead" data-r>American Contractors Corp. and the Giordano family care deeply about the community and strongly believe in giving back.</p>
+      <div class="lists">
+        <div data-r><h4>New ceilings — labor & materials donated to</h4><ul><li>Allston Fire Department</li><li>Bridgewater Fire Department</li><li>Covenant Congregational Church, No. Easton</li><li>Rebuilding Together Boston</li></ul></div>
+        <div data-r><h4>We have also contributed to</h4><ul id="contrib"></ul></div>
+      </div>
+    </div>
+    <div class="cpics"><img data-k="comm1" data-r alt="Donated ceiling installation"><img data-k="comm2" data-r alt="Community project ceiling"></div>
+  </div>
+</section>
+
+<section class="careers" id="careers">
+  <div class="wrap">
+    <span class="eyebrow" data-r>Careers</span>
+    <h2 class="h2 split">Build your career with us.</h2>
+    <p class="lead" data-r>We are looking for talented individuals to join our team. Explore our current openings below.</p>
+    <div class="jobs">
+      <div class="job" data-r><div><span class="tag">Project Estimator / Project Manager</span><h3>Acoustical / Specialty Ceilings & Wall Panels</h3><p>Manage project estimates, schedules, and client coordination to ensure successful project delivery.</p></div><a class="btn dark mag" href="mailto:estimating@acorp.biz?subject=Application%3A%20Acoustical%20%2F%20Specialty%20Ceilings%20%26%20Wall%20Panels%20PE%2FPM">Apply Now</a></div>
+      <div class="job" data-r><div><span class="tag">Project Estimator / Project Manager</span><h3>Custom Architectural Metal Fabrications</h3><p>Oversee project planning, budgeting, and execution for custom metal fabrication projects.</p></div><a class="btn dark mag" href="mailto:estimating@acorp.biz?subject=Application%3A%20Custom%20Architectural%20Metal%20Fabrications%20PE%2FPM">Apply Now</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <img data-k="hero1" data-speed=".15" alt="">
+  <div class="wrap">
+    <span class="eyebrow" data-r style="color:#fff">Ready when you are</span>
+    <h2 class="split">Ready to take your designs to the next level?</h2>
+    <a href="#contact" class="btn mag" data-r>Start a conversation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow" data-r>Contact us</span>
+      <h2 class="h2 split">We’d love to hear from you.</h2>
+      <p class="lead" data-r>Whether you have a question, feedback, or want to explore a potential collaboration, our dedicated team is here to help.</p>
+      <div class="info">
+        <a href="mailto:estimating@acorp.biz" data-r><i><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></i><span><small>Email</small><b>estimating@acorp.biz</b></span></a>
+        <a href="tel:+17819618453" data-r><i><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></i><span><small>Telephone</small><b>(781) 961-8453</b></span></a>
+        <div data-r><i><svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4v-7h16v7h-2M8 14h8v7H8z"/></svg></i><span><small>Fax</small><b>(781) 961-3605</b></span></div>
+        <a href="https://maps.google.com/?q=35+North+Street,+Canton,+MA+02021" target="_blank" rel="noopener" data-r><i><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></i><span><small>Address</small><b>35 North Street, Canton, MA 02021</b></span></a>
+      </div>
+      <div class="map" data-r><iframe title="Map: 35 North Street, Canton, MA" loading="lazy" src="https://maps.google.com/maps?q=35%20North%20Street%2C%20Canton%2C%20MA%2002021&z=14&output=embed"></iframe></div>
+    </div>
+    <form id="form" data-r novalidate>
+      <h3>Send us a message</h3>
+      <div class="f"><label>First name <em>*</em></label><input name="first" required autocomplete="given-name"></div>
+      <div class="f"><label>Last name <em>*</em></label><input name="last" required autocomplete="family-name"></div>
+      <div class="f"><label>Email address <em>*</em></label><input type="email" name="email" required autocomplete="email"></div>
+      <div class="f"><label>Phone <em>*</em></label><input type="tel" name="phone" required autocomplete="tel"></div>
+      <div class="f"><label>Company name</label><input name="company" autocomplete="organization"></div>
+      <div class="f"><label>Service of interest <em>*</em></label><select name="service" required><option value="">Select…</option><option>Acoustical Ceiling & Wall Panels</option><option>Custom Architectural Metal Fabrication</option><option>Custom Barrisol Ceilings & Walls</option><option>Novawall Installation</option><option>Laqfoil Installation</option></select></div>
+      <div class="f"><label>Union / Non-union <em>*</em></label><div class="radios"><label><input type="radio" name="union" value="Union" required> Union</label><label><input type="radio" name="union" value="Non-union"> Non-union</label></div></div>
+      <div class="f"><label>How did you hear about us?</label><div class="radios"><label><input type="radio" name="heard" value="Referral"> Referral</label><label><input type="radio" name="heard" value="Internet"> Internet</label><label><input type="radio" name="heard" value="Other"> Other</label></div></div>
+      <div class="f full"><label>Message <em>*</em></label><textarea name="msg" rows="5" required></textarea></div>
+      <p class="fnote">Have drawings or specs? Attach them when your email opens, or send them to estimating@acorp.biz.</p>
+      <div class="ok" id="ok">Thanks — your email app should open with your message ready to send.</div>
+      <button class="btn mag" type="submit">Send message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><a href="#top" class="flogo"><img src="img/logo/image010.png" alt="American Contractors Corp."></a><p>For over 28 years, American Contractors Corp. has been a family-owned, leading subcontractor in New England specializing in acoustical ceilings, acoustical walls, and custom wood- and metalwork.</p></div>
+      <div><h5>Company</h5><ul><li><a href="#about">About us</a></li><li><a href="#history">Our history</a></li><li><a href="#leadership">Leadership</a></li><li><a href="#partners">Associations</a></li><li><a href="#community">Community</a></li><li><a href="#careers">Careers</a></li></ul></div>
+      <div><h5>Services</h5><ul><li><a href="#services" data-go="0">Acoustical Ceiling & Wall Panels</a></li><li><a href="#services" data-go="1">Custom Architectural Metal</a></li><li><a href="#services" data-go="2">Novawall Installation</a></li><li><a href="#services" data-go="3">Laqfoil Installation</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li>35 North Street<br>Canton, MA 02021</li><li><a href="tel:+17819618453">(781) 961-8453</a></li><li><a href="mailto:estimating@acorp.biz">estimating@acorp.biz</a></li><li><a href="https://www.linkedin.com/company/american-contractors-corp./" target="_blank" rel="noopener">LinkedIn ↗</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> American Contractors Corp. All rights reserved.</span><span>Redesign concept by Prime Setters</span></div>
+  </div>
+</footer>
+
+<dialog id="lb" aria-label="Project gallery">
+  <div class="lb-top"><div><h3 id="lbT"></h3><small id="lbS"></small></div><button class="x" data-close aria-label="Close">×</button></div>
+  <div class="lb-stage"><button class="lb-nav p" id="lbP" aria-label="Previous">‹</button><img id="lbI" alt=""><button class="lb-nav n" id="lbN" aria-label="Next">›</button></div>
+  <div class="lb-thumbs" id="lbTh"></div>
+</dialog>
+<dialog id="bio"><div class="in"><button class="x" data-close aria-label="Close">×</button><div class="mono" id="bioM"></div><h3 id="bioN"></h3><h6 id="bioR"></h6><p id="bioP"></p></div></dialog>
+
+<script src="data.js"></script>
+<script>
+(()=>{
+const D=window.ACORP, $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+$('#yr').textContent=new Date().getFullYear();
+
+/* images by key */
+$$('img[data-k]').forEach(i=>{i.src=D.site[i.dataset.k];i.loading='lazy';i.decoding='async'});
+$('#aboutImg').src=D.site.about;
+
+/* hero slides */
+const hs=['hero1','hero2','hero5','hero3','hero4'].map(k=>D.site[k]).concat([D.projects[0].imgs[0],D.projects[12].imgs[0]]);
+const sl=$('#slides'),dots=$('#dots');
+hs.forEach((s,i)=>{const im=new Image();im.src=s;im.alt='';if(i)im.loading='lazy';sl.append(im);const b=document.createElement('button');b.setAttribute('aria-label','Slide '+(i+1));b.onclick=()=>show(i,true);dots.append(b)});
+let cur=-1,timer;function show(i,user){const ims=sl.children;if(cur>=0){ims[cur].classList.remove('on');dots.children[cur].classList.remove('on')}cur=i;ims[i].classList.add('on');dots.children[i].classList.add('on');clearTimeout(timer);timer=setTimeout(()=>show((cur+1)%ims.length),6000)}
+show(0);
+
+/* marquee */
+const tr=$('#track');[...D.clients,...D.clients].forEach(c=>{const i=new Image();i.src=c.src;i.alt=c.name;i.loading='lazy';tr.append(i)});
+
+/* split headings into words */
+$$('.split').forEach(h=>{const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){f.append(w);return}const o=document.createElement('span');o.className='wd';const s=document.createElement('span');s.textContent=w;o.append(s);f.append(o)});c.replaceWith(f)}else if(c.nodeType===1&&!c.classList.contains('wd'))walk(c)})};walk(h);$$('.wd>span',h).forEach((s,i)=>s.style.transitionDelay=(i*.06)+'s')});
+
+/* services data lists */
+const chip=(el,arr)=>{arr.forEach((t,i)=>{const s=document.createElement('span');s.textContent=t;s.style.transitionDelay=(i*.03)+'s';el.append(s)})};
+const MFG={"9Wood":"https://www.9wood.com/","Alpro Acoustics":"https://alproacoustics.com/","Arktura":"https://www.arktura.com/","Armstrong":"https://www.armstrongceilings.com/","Ceilings Plus":"https://www.ceilingsplus.com/","Chicago Metallic Corporation":"https://www.chicagometallic.com/","Decoustics":"https://www.decoustics.com/","Ecophon":"https://www.ecophon.com/","Hunter Douglas":"https://www.hunterdouglasarchitectural.com/","Rulon Company":"https://www.rulonco.com/","Simplex Ceiling":"https://www.simplexceilings.com/","Steel Ceilings":"https://www.steelceilings.com/","Unistrut":"https://www.unistrut.us/","USG":"https://www.usg.com/"};
+Object.entries(MFG).forEach(([n,u],i)=>{const s=document.createElement('span');s.style.transitionDelay=(i*.03)+'s';const a=document.createElement('a');a.href=u;a.target='_blank';a.rel='noopener';a.textContent=n;s.append(a);$('#mfg').append(s)});
+chip($('#novaA'),['Sustainable','Contributes to LEED credits','Curved (convex & concave) surfaces','Design flexibility','Site fabricated','Controlled distribution','Certified installers','Wide range of fabrics','Exact pattern matching','Strict adherence to fire codes','Easy maintenance','Acoustical, tackable, aesthetic','No adhesives used','Lifetime limited warranty']);
+chip($('#novaB'),['Bank lobbies','Home theaters','Hotel rooms & lobbies','Conference rooms','Auditoriums','Elevators & elevator lobbies','Schools','Office tackboards','Corporate dining rooms','Executive lounges','Libraries','Restaurants','Health care facilities','Break rooms','Daycare facilities','Museums','Gymnasiums','Airport lounges','Recording studios','Courtrooms','Mastering suites','Movie theaters']);
+const tabs=$$('.svc-tabs button'),pans=$$('.svc');
+function tab(i){tabs.forEach((b,j)=>{b.classList.toggle('on',i==j);b.setAttribute('aria-selected',i==j)});pans.forEach((p,j)=>p.classList.toggle('on',i==j))}
+tabs.forEach(b=>b.onclick=()=>tab(+b.dataset.t));
+$$('[data-go]').forEach(a=>a.addEventListener('click',()=>tab(+a.dataset.go)));
+
+/* projects */
+const pg=$('#pgrid');
+const wide=new Set([0,4,8,12]);
+D.projects.forEach((p,i)=>{const c=document.createElement('article');c.className='card'+(i===12?' full':[0,6,10].includes(i)?' wide':'');c.dataset.r='';c.tabIndex=0;c.dataset.cat=p.scope;
+c.innerHTML=`<img src="${p.imgs[0]}" alt="${p.t}" loading="lazy" decoding="async"><span class="plus"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg></span><span class="count"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>${p.imgs.length}</span><div class="meta"><small>${p.scope}</small><h3>${p.t}</h3><span>${p.place}</span></div>`;
+c.onclick=()=>openLB(p.t,p.place+' · '+p.scope,p.imgs,0);c.onkeydown=e=>{if(e.key==='Enter')c.click()};pg.append(c)});
+$$('#filters button').forEach(b=>b.onclick=()=>{$$('#filters button').forEach(x=>x.classList.toggle('on',x===b));const f=b.dataset.f;pg.classList.toggle('filtered',f!=='all');$$('.card').forEach(c=>c.classList.toggle('hide',f!=='all'&&!c.dataset.cat.includes(f)))});
+
+/* archive strip */
+const rows=$$('#strip .row'),A=D.archive,half=Math.ceil(A.length/2);
+[A.slice(0,half),A.slice(half)].forEach((set,r)=>{[...set,...set].forEach((a,k)=>{const f=document.createElement('figure');f.innerHTML=`<img src="${a.src}" alt="${a.cap}" loading="lazy" decoding="async"><figcaption>${a.cap}</figcaption>`;const base=r?half:0;f.onclick=()=>openLB('From the archive',a.cap,A.map(x=>x.src),base+(k%set.length),A.map(x=>x.cap));rows[r].append(f)})});
+
+/* lightbox */
+const lb=$('#lb');let L={imgs:[],i:0,caps:null,s:''};
+function openLB(t,s,imgs,i,caps){L={imgs,i,caps,s};$('#lbT').textContent=t;const th=$('#lbTh');th.innerHTML='';imgs.forEach((u,k)=>{const m=new Image();m.src=u;m.alt='';m.loading='lazy';m.onclick=()=>go(k);th.append(m)});go(i);lb.showModal()}
+function go(i){const n=L.imgs.length;L.i=(i+n)%n;const im=$('#lbI');im.style.animation='none';im.offsetWidth;im.style.animation='';im.src=L.imgs[L.i];$('#lbS').textContent=(L.caps?L.caps[L.i]:L.s)+'  ·  '+(L.i+1)+' / '+n;$$('#lbTh img').forEach((m,k)=>m.classList.toggle('on',k===L.i));const a=$$('#lbTh img')[L.i];a&&a.scrollIntoView({block:'nearest',inline:'center'})}
+$('#lbP').onclick=()=>go(L.i-1);$('#lbN').onclick=()=>go(L.i+1);
+lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')go(L.i-1);if(e.key==='ArrowRight')go(L.i+1)});
+let tx=0;$('.lb-stage').addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});$('.lb-stage').addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>40)go(L.i+(d<0?1:-1))});
+$$('dialog').forEach(d=>{d.addEventListener('click',e=>{if(e.target===d||e.target.closest('[data-close]')||e.target.classList.contains('lb-stage'))d.close()})});
+
+/* leadership */
+const TEAM=[
+ ['Tony Giordano','CEO','In 1998, Tony founded American Contractors Corp. in Randolph, Massachusetts. A union carpenter for more than 30 years, Tony started by specializing in acoustical ceilings and wall panels and was formerly project manager and superintendent for B&B Acoustical Contractors and field foreman at Cheviot Corp. Over the decades, Tony has built many valued relationships and earned great respect in the industry, with a motto to reflect that: “We don’t build buildings, we build relationships.”'],
+ ['Jonathan Levesque','President','Jon graduated from Wentworth Institute of Technology with a Master’s Degree in Construction Management, and holds a Bachelor’s Degree in Business Administration from Worcester State University. After college, Jon worked as field superintendent for his father’s general contracting company in 2008 after attaining his Unrestricted Construction Supervisors License (CSL). In 2015 he moved on to larger work in the heart of the city, tackling some of the most complex projects ever built in Massachusetts — One Dalton St., Wynn Encore Boston Harbor Casino, Logan International Airport Terminal E, UMass Chan (Worcester), and the Boston University Warren Towers Renovation. Jon spent time at Suffolk Construction and Shawmut Design & Construction on those projects. He joins American as President, leveraging his expansive industry network and problem-solving abilities from complex builds to drive American’s mantra: “Simplifying Complexity.”'],
+ ['Shawn Meagher','General Manager','Shawn began his career as a union carpenter, specializing in the installation of acoustical ceilings and various specialty wood and metal products. After acquiring his unrestricted construction supervisor’s license, he earned a bachelor’s degree in Construction Management from Wentworth Institute of Technology. With 15 years of experience as an interior systems installer and manager, Shawn has successfully completed numerous large-scale projects throughout the Boston area.'],
+ ['Christine Kofton','Chief Financial Officer','After graduating from Quinnipiac College with a BS in Accounting and Computer Science, Christine began her 20-year career in construction at a company specializing in modular homes. She took a short detour into the hospital sector when she first moved to Massachusetts, but quickly returned to the industry. Christine’s experience is a great asset when working with general contractors and vendors.'],
+ ['Robert McElman','Executive Vice President / Director of Architectural Metals','Robert graduated from Quincy High Vocational and Technical School and followed the path of many in his family into the custom metal fabrication and manufacturing industry. His 35 years in this business are a true advantage, enabling him to work with architects and designers to find cost-effective solutions for making custom metal products manufacturable.']];
+const ini=n=>n.split(' ').map(w=>w[0]).join('');
+TEAM.forEach(([n,r,b],i)=>{const e=document.createElement('button');e.className='person';e.dataset.r='';e.style.transitionDelay=(i*.08)+'s';e.innerHTML=`<span class="mono">${ini(n)}</span><h4>${n}</h4><small>${r}</small><span class="more">Read bio →</span>`;e.onclick=()=>{$('#bioM').textContent=ini(n);$('#bioN').textContent=n;$('#bioR').textContent=r;$('#bioP').textContent=b;$('#bio').showModal()};$('#tgrid').append(e)});
+
+/* associations */
+const AS=[['Ceilings & Interior Systems Construction Association','American Contractors President Tony Giordano has served on the CISCA board of directors. CISCA is an international trade association founded in 1950 for the advancement of the interior commercial construction industry.'],
+['New England Regional Council of Carpenters','The New England Regional Council of Carpenters represents 24,000 carpenters, pile drivers, shop and millworkers and floor coverers working in New England.'],
+['Associated General Contractors of America','AGC provides a full range of services satisfying the needs and concerns of its members, improving the quality of construction and protecting the public interest.'],
+['American Society of Professional Estimators','ASPE serves construction estimators by providing education, fellowship and opportunity for professional development. Tony Giordano previously served as VP of the organization.'],
+['Massachusetts Building Congress','MBC brings together decision makers from all corners of the $7.4 billion design and construction industry in Massachusetts.'],
+['Associated Subcontractors of Massachusetts','ASM is the leading business association in Massachusetts for specialty contractors, suppliers and service providers in the commercial construction industry.'],
+['Building Trades Employers’ Association','The BTEA is the major voice in New England for the union building trades’ contractor, encompassing seven area trade associations. Tony Giordano is a trustee for the BTEA.']];
+AS.forEach(([t,p],i)=>{const d=document.createElement('div');d.className='acard';d.dataset.r='';d.style.transitionDelay=(i%3*.08)+'s';d.innerHTML=`<div class="lg"><img src="${D.assoc[i]}" alt="${t} logo" loading="lazy"></div><h4>${t}</h4><p>${p}</p>`;$('#agrid').append(d)});
+['Boston Police Relief Association','Dorchester Youth Alternative Academy','My Brother’s Keeper','Randolph Police Association','Scoring for Scleroderma','South Shore Hospital','The Special Olympics','Veterans Administration of Massachusetts','Alzheimer’s Association','Youth Build','Project Healing Waters Fly Fishing','ACE Mentoring','Muscular Dystrophy Association'].forEach(t=>{const l=document.createElement('li');l.textContent=t;$('#contrib').append(l)});
+
+/* form -> email */
+$('#form').addEventListener('submit',e=>{e.preventDefault();const f=e.target;if(!f.checkValidity()){f.reportValidity();return}const v=Object.fromEntries(new FormData(f));
+const body=`Name: ${v.first} ${v.last}\nEmail: ${v.email}\nPhone: ${v.phone}\nCompany: ${v.company||'-'}\nService of interest: ${v.service}\nUnion/Non-union: ${v.union||'-'}\nHow did you hear about us: ${v.heard||'-'}\n\n${v.msg}`;
+location.href='mailto:estimating@acorp.biz?subject='+encodeURIComponent('Website inquiry: '+v.service)+'&body='+encodeURIComponent(body);$('#ok').style.display='block'});
+
+/* menu */
+$('#burger').onclick=()=>document.body.classList.toggle('open');
+$$('#menu a').forEach(a=>a.addEventListener('click',()=>document.body.classList.remove('open')));
+
+/* reveal */
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.dataset.count!==undefined)count(e.target)}}),{threshold:.15,rootMargin:'0px 0px -6% 0px'}):null;
+const targets=[...$$('[data-r]'),...$$('.split'),$('#tl'),...$$('[data-count]')];
+if(io&&!RM)targets.forEach(t=>io.observe(t));else targets.forEach(t=>t.classList.add('in'));
+setTimeout(()=>$('#h1').classList.add('in'),150);
+setTimeout(()=>targets.forEach(t=>{const r=t.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)t.classList.add('in')}),2500);
+function count(el){if(RM||el.dataset.done)return;el.dataset.done=1;const end=+el.dataset.count,start=el.dataset.plain!==undefined?end-40:0,t0=performance.now(),d=1800;const step=t=>{const k=Math.min(1,(t-t0)/d),e=1-Math.pow(1-k,4);el.textContent=Math.round(start+(end-start)*e);if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+
+/* scroll: header, progress, parallax */
+const hdr=$('#hdr'),prog=$('#prog'),par=$$('[data-speed]');
+let ticking=false;function onScroll(){const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;hdr.classList.toggle('solid',y>60);prog.style.transform=`scaleX(${h?y/h:0})`;
+if(!RM)par.forEach(el=>{const r=el.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;const c=(r.top+r.height/2-innerHeight/2);el.style.transform=`translate3d(0,${-c*+el.dataset.speed}px,0)`});ticking=false}
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});onScroll();
+
+/* magnetic buttons + card tilt (pointer devices only) */
+if(!RM&&matchMedia('(hover:hover)').matches){
+ $$('.mag').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});b.addEventListener('mouseleave',()=>b.style.transform='')});
+ document.addEventListener('mousemove',e=>{const c=e.target.closest&&e.target.closest('.card');$$('.card.tilt').forEach(x=>{if(x!==c){x.classList.remove('tilt');x.style.transform=''}});if(!c)return;const r=c.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;c.classList.add('tilt');c.style.transform=`perspective(900px) rotateY(${px*8}deg) rotateX(${-py*8}deg)`});
+}
+
+/* hero canvas: sound waves that get absorbed (acoustics) */
+const cv=$('#waves'),ctx=cv.getContext('2d');let W,H,dpr,mx=-1e3,my=-1e3,t=0,visible=true;
+function size(){dpr=Math.min(devicePixelRatio||1,2);W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+size();addEventListener('resize',size);
+$('#hero').addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+$('#hero').addEventListener('pointerleave',()=>{mx=my=-1e3});
+new IntersectionObserver(es=>visible=es[0].isIntersecting).observe(cv);
+const LINES=14;
+function frame(){if(visible){ctx.clearRect(0,0,W,H);
+ const panelX=W*.62;
+ for(let l=0;l<LINES;l++){const base=H*.18+l*(H*.62/LINES),ph=l*.5;ctx.beginPath();
+  for(let x=0;x<=W;x+=8){let amp=26*(1-Math.min(1,Math.max(0,(x-W*.05)/(panelX-W*.05)))**1.4)+2; // absorbed toward panel
+   const d=Math.hypot(x-mx,base-my);amp+=Math.max(0,120-d)*.35;
+   const y=base+Math.sin(x*.012-t*1.6+ph)*amp+Math.sin(x*.031+t*.9+ph*2)*amp*.25;x?ctx.lineTo(x,y):ctx.moveTo(x,y)}
+  ctx.strokeStyle=l===Math.floor(LINES/2)?'rgba(226,58,79,.75)':`rgba(255,255,255,${.06+.05*Math.sin(l+t*.4)**2})`;ctx.lineWidth=l===Math.floor(LINES/2)?1.6:1;ctx.stroke()}
+ // acoustic panel grid that waves dampen into
+ ctx.strokeStyle='rgba(255,255,255,.07)';ctx.lineWidth=1;const g=46;
+ for(let x=panelX;x<W+g;x+=g){ctx.beginPath();ctx.moveTo(x,H*.12);ctx.lineTo(x,H*.84);ctx.stroke()}
+ for(let y=H*.12;y<=H*.84;y+=g){ctx.beginPath();ctx.moveTo(panelX,y);ctx.lineTo(W,y);ctx.stroke()}
+ t+=.016}
+ if(!RM)requestAnimationFrame(frame)}
+frame();
+})();
+</script>
+</body>
+</html>
